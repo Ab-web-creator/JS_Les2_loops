@@ -172,26 +172,19 @@ const students = [
     {name: 'Karima', city: 'Utrecht', zipCode: '3531', neighborhood: null},
 ];
 
-const updateNeighborhood = (students) => {
-    students.forEach((student) => {
-        const zipCode = student.zipCode;
 
-        // Use a switch statement to determine the neighborhood based on the zip code
+    for (let i = 0; i < students.length; i++) {
+        const zipCode = students[i].zipCode;
         switch (zipCode) {
             case '3513':
-                student.neighborhood = 'Pijlsweerd';
+                students[i].neighborhood = 'Pijlsweerd';
                 break;
             default:
-                student.neighborhood = 'Vogelenbuurt';
+                students[i].neighborhood = 'Vogelenbuurt';
         }
-    });
+    }
 
-    return students;
-};
-
-// Call the function to update the neighborhoods
-const updatedStudents = updateNeighborhood(students);
-console.log(updatedStudents);
+console.log(students)
 
 // Verwachte uitkomsten:
 // [
